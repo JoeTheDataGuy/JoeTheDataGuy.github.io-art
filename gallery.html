@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+        <title>Art Gallery</title>
+        <style>
+          .vote-container {
+              text-align: Left;
+              margin-top:25px;
+          }
+          .vote-button {
+              font-size: 20px;
+              margin: 10px;
+          }
+          .vote-count {
+              font-size: 20px;
+              padding-top: 10px;
+          }
+      </style>
+    </head>
+    <body class="bodyGallery">
+      <div>
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="mailto:improviser8@gmail.com"><img src="https://www.freepnglogos.com/uploads/email-logo-png-13.png" alt="email" width="45" height="45"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="bio.html">Bio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="youtube.html">Youtube</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="gallery.html">Gallery</a>
+              </ul>
+            </div>
+          </div>
+        </nav>
+  </div>
+
+
+
+
+
+ <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+
+    <!-- Page Content -->
+   <div class="container page-top">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <h3>Fall Road</h3>
+                <a href="https://github.com/JoeTheDataGuy/Programming-Projects/blob/main/IMG_202_ROAD.jpg?raw=true" class="fancybox" rel="ligthbox">
+                    <img src="https://github.com/JoeTheDataGuy/Programming-Projects/blob/main/IMG_202_ROAD.jpg?raw=true" class="zoom img-fluid" alt="">
+                </a>
+                <div class="vote-container">
+                  <button class="btn btn-primary" class="vote-button" id="upvote"><i class="icon-user icon-white"></i>👍</button>
+                  <button class="btn btn-danger" class="vote-button" id="downvote"><i class="icon-user icon-white"></i>👎</button>
+                  <div class="vote-count" id="voteCount">Votes: 0</div>
+              </div>
+              <script>
+                // Function to update the vote count display
+                function updateVoteCount() {
+                    const voteCount = localStorage.getItem('voteCount') || 0;
+                    document.getElementById('voteCount').innerText = `Votes: ${voteCount}`;
+                }
+
+                // Event listeners for the buttons
+                document.getElementById('upvote').addEventListener('click', () => {
+                    let voteCount = parseInt(localStorage.getItem('voteCount') || 0);
+                    voteCount++;
+                    localStorage.setItem('voteCount', voteCount);
+                    updateVoteCount();
+                });
+
+                document.getElementById('downvote').addEventListener('click', () => {
+                    let voteCount = parseInt(localStorage.getItem('voteCount') || 0);
+                    voteCount--;
+                    localStorage.setItem('voteCount', voteCount);
+                    updateVoteCount();
+                });
+
+                // Initialize the vote count display on page load
+                updateVoteCount();
+              </script>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <h3>Snowy City</h3>
+                <a href="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/snowy%20walk.jpg"  class="fancybox" rel="ligthbox">
+                    <img src="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/snowy%20walk.jpg" class="zoom img-fluid"  alt="Vote Image">
+                </a>
+                <div class="vote-container">
+                  <button class="btn btn-primary" class="vote-button" id="upvote2"><i class="icon-user icon-white"></i>👍</button>
+                  <button class="btn btn-danger" class="vote-button" id="downvote2"><i class="icon-user icon-white"></i>👎</button>
+                  <div class="vote-count" id="voteCount2">Votes: 0</div>
+              </div>
+
+              <script>
+                // Function to update the vote count display
+                function updateVoteCount2() {
+                    const voteCount2 = localStorage.getItem('voteCount2') || 0;
+                    document.getElementById('voteCount2').innerText = `Votes: ${voteCount2}`;
+                }
+
+                // Event listeners for the buttons
+                document.getElementById('upvote2').addEventListener('click', () => {
+                    let voteCount2 = parseInt(localStorage.getItem('voteCount2') || 0);
+                    voteCount2++;
+                    localStorage.setItem('voteCount2', voteCount2);
+                    updateVoteCount2();
+                });
+
+                document.getElementById('downvote2').addEventListener('click', () => {
+                    let voteCount2 = parseInt(localStorage.getItem('voteCount2') || 0);
+                    voteCount2--;
+                    localStorage.setItem('voteCount2', voteCount2);
+                    updateVoteCount2();
+                });
+
+                // Initialize the vote count display on page load
+                updateVoteCount2();
+              </script>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <h3>Wet Shrooms</h3>
+                <a href="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/mushrooms.jpg" class="fancybox" rel="ligthbox">
+                    <img  src="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/mushrooms.jpg" class="zoom img-fluid "  alt="">
+                </a>
+                <div class="vote-container">
+                  <button class="btn btn-primary" class="vote-button" id="upvote3"><i class="icon-user icon-white"></i>👍</button>
+                  <button class="btn btn-danger" class="vote-button" id="downvote3"><i class="icon-user icon-white"></i>👎</button>
+                  <div class="vote-count" id="voteCount3">Votes: 0</div>
+              </div>
+
+              <script>
+                // Function to update the vote count display
+                function updateVoteCount3() {
+                    const voteCount3 = localStorage.getItem('voteCount3') || 0;
+                    document.getElementById('voteCount3').innerText = `Votes: ${voteCount3}`;
+                }
+
+                // Event listeners for the buttons
+                document.getElementById('upvote3').addEventListener('click', () => {
+                    let voteCount3 = parseInt(localStorage.getItem('voteCount3') || 0);
+                    voteCount3++;
+                    localStorage.setItem('voteCount3', voteCount3);
+                    updateVoteCount3();
+                });
+
+                document.getElementById('downvote3').addEventListener('click', () => {
+                    let voteCount3 = parseInt(localStorage.getItem('voteCount3') || 0);
+                    voteCount3--;
+                    localStorage.setItem('voteCount3', voteCount3);
+                    updateVoteCount3();
+                });
+
+                // Initialize the vote count display on page load
+                updateVoteCount3();
+              </script>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <h3>Forest River</h3>
+                <a href="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/forest%20river.jpg" class="fancybox" rel="ligthbox">
+                    <img  src="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/forest%20river.jpg" class="zoom img-fluid "  alt="">
+                </a>
+                <div class="vote-container">
+                  <button class="btn btn-primary" class="vote-button" id="upvote4"><i class="icon-user icon-white"></i>👍</button>
+                  <button class="btn btn-danger" class="vote-button" id="downvote4"><i class="icon-user icon-white"></i>👎</button>
+                  <div class="vote-count" id="voteCount4">Votes: 0</div>
+              </div>
+
+              <script>
+                // Function to update the vote count display
+                function updateVoteCount4() {
+                    const voteCount4 = localStorage.getItem('voteCount4') || 0;
+                    document.getElementById('voteCount4').innerText = `Votes: ${voteCount4}`;
+                }
+
+                // Event listeners for the buttons
+                document.getElementById('upvote4').addEventListener('click', () => {
+                    let voteCount4 = parseInt(localStorage.getItem('voteCount4') || 0);
+                    voteCount4++;
+                    localStorage.setItem('voteCount4', voteCount4);
+                    updateVoteCount4();
+                });
+
+                document.getElementById('downvote4').addEventListener('click', () => {
+                    let voteCount4 = parseInt(localStorage.getItem('voteCount4') || 0);
+                    voteCount4--;
+                    localStorage.setItem('voteCount4', voteCount4);
+                    updateVoteCount4();
+                });
+
+                // Initialize the vote count display on page load
+                updateVoteCount4();
+              </script>
+            </div>
+
+             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <h3>Lake Campfire</h3>
+                <a href="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/campfire%20mountains%20original%20(1).jpg" class="fancybox" rel="ligthbox">
+                    <img  src="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/campfire%20mountains%20original%20(1).jpg" class="zoom img-fluid "  alt="">
+                </a>
+                <div class="vote-container">
+                  <button class="btn btn-primary" class="vote-button" id="upvote5"><i class="icon-user icon-white"></i>👍</button>
+                  <button class="btn btn-danger" class="vote-button" id="downvote5"><i class="icon-user icon-white"></i>👎</button>
+                  <div class="vote-count" id="voteCount5">Votes: 0</div>
+              </div>
+
+              <script>
+                // Function to update the vote count display
+                function updateVoteCount5() {
+                    const voteCount5 = localStorage.getItem('voteCount5') || 0;
+                    document.getElementById('voteCount5').innerText = `Votes: ${voteCount5}`;
+                }
+
+                // Event listeners for the buttons
+                document.getElementById('upvote5').addEventListener('click', () => {
+                    let voteCount5 = parseInt(localStorage.getItem('voteCount5') || 0);
+                    voteCount5++;
+                    localStorage.setItem('voteCount5', voteCount5);
+                    updateVoteCount5();
+                });
+
+                document.getElementById('downvote5').addEventListener('click', () => {
+                    let voteCount5 = parseInt(localStorage.getItem('voteCount5') || 0);
+                    voteCount5--;
+                    localStorage.setItem('voteCount5', voteCount5);
+                    updateVoteCount5();
+                });
+
+                // Initialize the vote count display on page load
+                updateVoteCount5();
+              </script>
+            </div>
+
+             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <h3>Screamin Eagle</h3>
+                <a href="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/eagle.jpg" class="fancybox" rel="ligthbox">
+                    <img  src="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/eagle.jpg" class="zoom img-fluid "  alt="">
+                </a>
+                <div class="vote-container">
+                  <button class="btn btn-primary" class="vote-button" id="upvote6"><i class="icon-user icon-white"></i>👍</button>
+                  <button class="btn btn-danger" class="vote-button" id="downvote6"><i class="icon-user icon-white"></i>👎</button>
+                  <div class="vote-count" id="voteCount6">Votes: 0</div>
+              </div>
+
+              <script>
+                // Function to update the vote count display
+                function updateVoteCount6() {
+                    const voteCount6 = localStorage.getItem('voteCount6') || 0;
+                    document.getElementById('voteCount6').innerText = `Votes: ${voteCount6}`;
+                }
+
+                // Event listeners for the buttons
+                document.getElementById('upvote6').addEventListener('click', () => {
+                    let voteCount6 = parseInt(localStorage.getItem('voteCount6') || 0);
+                    voteCount6++;
+                    localStorage.setItem('voteCount6', voteCount6);
+                    updateVoteCount6();
+                });
+
+                document.getElementById('downvote6').addEventListener('click', () => {
+                    let voteCount6 = parseInt(localStorage.getItem('voteCount6') || 0);
+                    voteCount6--;
+                    localStorage.setItem('voteCount6', voteCount6);
+                    updateVoteCount6();
+                });
+
+                // Initialize the vote count display on page load
+                updateVoteCount6();
+              </script>
+            </div>
+
+             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <h3>Tuscan Sunset</h3>
+                <a href="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/tuscan%20sunset.jpg" class="fancybox" rel="ligthbox">
+                    <img  src="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/tuscan%20sunset.jpg" class="zoom img-fluid "  alt="">
+                </a>
+                <div class="vote-container">
+                  <button class="btn btn-primary" class="vote-button" id="upvote7"><i class="icon-user icon-white"></i>👍</button>
+                  <button class="btn btn-danger" class="vote-button" id="downvote7"><i class="icon-user icon-white"></i>👎</button>
+                  <div class="vote-count" id="voteCount7">Votes: 0</div>
+              </div>
+
+              <script>
+                // Function to update the vote count display
+                function updateVoteCount7() {
+                    const voteCount7 = localStorage.getItem('voteCount7') || 0;
+                    document.getElementById('voteCount7').innerText = `Votes: ${voteCount7}`;
+                }
+
+                // Event listeners for the buttons
+                document.getElementById('upvote7').addEventListener('click', () => {
+                    let voteCount7 = parseInt(localStorage.getItem('voteCount7') || 0);
+                    voteCount7++;
+                    localStorage.setItem('voteCount7', voteCount7);
+                    updateVoteCount7();
+                });
+
+                document.getElementById('downvote7').addEventListener('click', () => {
+                    let voteCount7 = parseInt(localStorage.getItem('voteCount7') || 0);
+                    voteCount7--;
+                    localStorage.setItem('voteCount7', voteCount7);
+                    updateVoteCount7();
+                });
+
+                // Initialize the vote count display on page load
+                updateVoteCount7();
+              </script>
+            </div>
+
+             <div id="myDiv" class="col-lg-3 col-md-4 col-xs-6 thumb">
+              <h3>Misty Valley</h3>
+                <a href="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/misty%20lake.jpg" class="fancybox" rel="ligthbox">
+                    <img  src="https://raw.githubusercontent.com/JoeTheDataGuy/Programming-Projects/refs/heads/main/misty%20lake.jpg" class="zoom img-fluid "  alt="">
+                </a>
+                <div class="vote-container">
+                  <button class="btn btn-primary" class="vote-button" id="upvote8"><i class="icon-user icon-white"></i>👍</button>
+                  <button class="btn btn-danger" class="vote-button" id="downvote8"><i class="icon-user icon-white"></i>👎</button>
+                  <div class="vote-count" id="voteCount8">Votes: 0</div>
+              </div>
+
+              <script>
+                // Function to update the vote count display
+                function updateVoteCount8() {
+                    const voteCount8 = localStorage.getItem('voteCount8') || 0;
+                    document.getElementById('voteCount8').innerText = `Votes: ${voteCount8}`;
+                }
+
+                // Event listeners for the buttons
+                document.getElementById('upvote8').addEventListener('click', () => {
+                    let voteCount8 = parseInt(localStorage.getItem('voteCount8') || 0);
+                    voteCount8++;
+                    localStorage.setItem('voteCount8', voteCount8);
+                    updateVoteCount8();
+                });
+
+                document.getElementById('downvote8').addEventListener('click', () => {
+                    let voteCount8 = parseInt(localStorage.getItem('voteCount8') || 0);
+                    voteCount8--;
+                    localStorage.setItem('voteCount8', voteCount8);
+                    updateVoteCount8();
+                });
+                // Initialize the vote count display on page load
+                updateVoteCount8();
+              </script>
+            </div>
+       </div>
+    </div>
+    </body>
+</html>
+
